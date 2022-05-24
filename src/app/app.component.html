@@ -3,7 +3,7 @@
 
 <div>
   <label>Enter length</label>
-  <input #input>
+  <input (input)="onInput($event)" type="number">
 </div>
 
 <div>

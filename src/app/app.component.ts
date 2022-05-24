@@ -12,7 +12,11 @@ export class AppComponent {
   includeLetters = false;
   includeNumbers = false;
   includeSymbols = false;
-  @ViewChild('input') input!: ElementRef;
+ 
+  onInput(event: any){
+    console.log(event.data);
+    return event.data;
+  }
 
   onChangeLetters(){
     this.includeLetters = !this.includeLetters;
@@ -30,7 +34,7 @@ export class AppComponent {
     console.log(this.includeLetters)
     console.log(this.includeNumbers)
     console.log(this.includeSymbols)
-    console.log( "entered value:" , this.input.nativeElement.value)
+    // console.log( "entered value:" , this.input.nativeElement.value)
     this.password = "123"  // property binding
   }
 
