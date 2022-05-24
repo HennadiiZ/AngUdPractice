@@ -14,24 +14,12 @@ export class AppComponent {
   includeSymbols = false;
   length = 0;
  
-  // onInput(value: any){
-  //   const parsedValue = parseInt(value.data);
-
-  //   if(!isNaN(parsedValue)){
-  //        this.length = parsedValue;
-  //   }
-  //   console.log(this.length);
-  // }
-
 onInput(value: any): void {
-    // const parsedValue = parseInt(value);
     const parsedValue = parseInt(value.value);
     
     if(!isNaN(parsedValue)){
       this.length = parsedValue;
     }
-    console.log("users data", this.length);
-    console.log(value.value);
 }
 
   onChangeLetters(){
@@ -47,10 +35,22 @@ onInput(value: any): void {
   }
 
   onButtonClick(){ 
-    console.log(this.includeLetters)
-    console.log(this.includeNumbers)
-    console.log(this.includeSymbols)
-    this.password = "123"  
+    const letters = "abcdefghklmnopqrstuvwxyz";
+    const numbers = "1234567890";
+    const symbols = "!@#$%&?";
+
+    let validCharacters = "";
+
+    this.includeLetters && (validCharacters += letters)
+    this.includeNumbers && (validCharacters += numbers)
+    this.includeSymbols && (validCharacters += symbols)
+
+    let generatedPassword = "";
+      for(let i = 0; i < this.length; i++){
+          const index = Math.floor(Math.random() * validCharacters.length);
+          generatedPassword += validCharacters[index];
+      }
+      this.password = generatedPassword;
   }
 
 }
