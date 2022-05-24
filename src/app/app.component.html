@@ -1,37 +1,54 @@
 
-<h1>Password generator</h1> 
-
-<div>
-  <label>Enter length</label>
-  <input (input)="onInput($event?.target)">
-  <!-- <input (input)="onInput($event)" > -->
-</div>
-
-<div>
-  <label>Use Letters</label>
-  <input (change)="onChangeLetters()" type="checkbox">
-</div>
-
-<div>
-  <label>Use Numbers</label>
-  <input (change)="onChangeNumbers()" type="checkbox">
-</div>
-
-<div>
-  <label>Use Symbols</label>
-  <input (change)="onChangeSymbols()" type="checkbox">
-</div>
-
-<div>
-  <button 
-  [disabled]="!(length && (this.includeSymbols || this.includeNumbers || this.includeLetters))" 
-  (click)="onButtonClick()"
-  >Generate!</button> 
-</div>
+<div class="container">
+  <div class="columns is-centered">
+  <div class="box column is-one-third">
 
 
-<div>
-  <label>Your password</label>
-  <input [value]="password"> 
+   
+
+
+
+        <h1 class="title has-text-centered">Password generator</h1> 
+        <div class="field">
+          <input class="input" (input)="onInput($event?.target)">
+          <label class="checkbox">Enter length</label>
+        </div>
+        
+        <div class="field">
+          <div class="control">
+              <input class="checkbox" (change)="onChangeLetters()" type="checkbox">
+              <label class="checkbox">Use Letters</label>
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="control">
+              <input class="checkbox" (change)="onChangeNumbers()" type="checkbox">
+              <label class="checkbox">Use Numbers</label>
+          </div>
+        </div>
   
+        <div class="field">
+          <div class="control">
+              <input class="checkbox" (change)="onChangeSymbols()" type="checkbox">
+              <label>Use Symbols</label>
+          </div>
+        </div>
+  
+    
+          <button 
+          class="button is-link is-fullwidth"
+          [disabled]="!(length && (this.includeSymbols || this.includeNumbers || this.includeLetters))" 
+          (click)="onButtonClick()"
+          >Generate!</button> 
+    
+  
+        <div class="box">
+          <label>Your password</label>
+          <input class="input" [value]="password"> 
+        </div>  
+
+    </div>
+  </div>
 </div>
+
