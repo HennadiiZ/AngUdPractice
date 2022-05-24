@@ -9,18 +9,27 @@ import { TranslateService } from './translate.service';
 export class AppComponent {
  
   password: string = "";
+  includeLetters = false;
+  includeNumbers = false;
+  includeSymbols = false;
+
+  onChangeLetters(){
+    this.includeLetters = !this.includeLetters;
+  }
+
+  onChangeNumbers(){
+    this.includeNumbers = !this.includeNumbers;
+  }
+
+  onChangeSymbols(){
+    this.includeSymbols = !this.includeSymbols;
+  }
 
   onButtonClick(){ // event binding
-    console.log(123)
+    console.log(this.includeLetters)
+    console.log(this.includeNumbers)
+    console.log(this.includeSymbols)
     this.password = "123"  // property binding
   }
 
-  getPassword(){ // event binding
-   
-    return this.password + "another way prop binding" ; // another way of property binding
-  }
-
-  getName(){
-    return  "Hennadii"; // interpolation
-  }
 }

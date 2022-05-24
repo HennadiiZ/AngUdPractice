@@ -1,16 +1,4 @@
 
-
-
-  <!-- <label>Enter English:</label> -->
-<!-- <input type="text" class="input" (input)="text = $event.target.value"> -->
-  <!-- <input type="text" #input class="input" (input)="onInput($event)">
-  <button (click)="submit()">submit</button>  
-
-
-<p>{{ translateText }}</p> -->
-
-
-
 <h1>Password generator</h1> 
 
 <div>
@@ -20,17 +8,17 @@
 
 <div>
   <label>Use Letters</label>
-  <input type="checkbox">
+  <input (change)="onChangeLetters()" type="checkbox">
 </div>
 
 <div>
   <label>Use Numbers</label>
-  <input type="checkbox">
+  <input (change)="onChangeNumbers()" type="checkbox">
 </div>
 
 <div>
   <label>Use Symbols</label>
-  <input type="checkbox">
+  <input (change)="onChangeSymbols()" type="checkbox">
 </div>
 
 <div>
@@ -40,9 +28,5 @@
 
 <div>
   <label>Your password</label>
-  <input [value]="password"> <!-- property binding -->
-  <input [value]="getPassword()"> <!-- another way of property binding -->
-  <input value="{{ password }}interpolation"> <!-- interpolation binding -->
+  <input [value]="password"> 
 </div>
-
-{{ getName() }} <!-- interpolation binding -->
