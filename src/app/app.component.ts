@@ -12,11 +12,27 @@ export class AppComponent {
   includeLetters = false;
   includeNumbers = false;
   includeSymbols = false;
+  length = 0;
  
-  onInput(event: any){
-    console.log(event.data);
-    return event.data;
-  }
+  // onInput(value: any){
+  //   const parsedValue = parseInt(value.data);
+
+  //   if(!isNaN(parsedValue)){
+  //        this.length = parsedValue;
+  //   }
+  //   console.log(this.length);
+  // }
+
+onInput(value: any): void {
+    // const parsedValue = parseInt(value);
+    const parsedValue = parseInt(value.value);
+    
+    if(!isNaN(parsedValue)){
+      this.length = parsedValue;
+    }
+    console.log("users data", this.length);
+    console.log(value.value);
+}
 
   onChangeLetters(){
     this.includeLetters = !this.includeLetters;
@@ -30,12 +46,11 @@ export class AppComponent {
     this.includeSymbols = !this.includeSymbols;
   }
 
-  onButtonClick(){ // event binding
+  onButtonClick(){ 
     console.log(this.includeLetters)
     console.log(this.includeNumbers)
     console.log(this.includeSymbols)
-    // console.log( "entered value:" , this.input.nativeElement.value)
-    this.password = "123"  // property binding
+    this.password = "123"  
   }
 
 }
