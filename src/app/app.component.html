@@ -23,11 +23,15 @@
 </div>
 
 <div>
-  <button (click)="onButtonClick()">Generate!</button> <!-- event binding -->
+  <button 
+  [disabled]="!(length && (this.includeSymbols || this.includeNumbers || this.includeLetters))" 
+  (click)="onButtonClick()"
+  >Generate!</button> 
 </div>
 
 
 <div>
   <label>Your password</label>
   <input [value]="password"> 
+  
 </div>
