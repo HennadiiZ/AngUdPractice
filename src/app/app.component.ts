@@ -7,27 +7,20 @@ import { TranslateService } from './translate.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+ 
+  password: string = "";
 
-  text!: string;
-  translateText!: string;
-  @ViewChild('input') input!: ElementRef
-
-  constructor(
-     private translateService: TranslateService
-  ){}
-
-  onInput(event: any){
-    this.text = event.target.value
+  onButtonClick(){ // event binding
+    console.log(123)
+    this.password = "123"  // property binding
   }
 
-  submit(){
-    this.translateService.translate(this.text)
-    .subscribe((result: any)=>{ 
-       this.translateText = result;
-    });
+  getPassword(){ // event binding
+   
+    return this.password + "another way prop binding" ; // another way of property binding
+  }
 
-    console.log(this.text);
-    this.input.nativeElement.value = ""
-    console.log("this is input value" , this.input.nativeElement.value);
+  getName(){
+    return  "Hennadii"; // interpolation
   }
 }
