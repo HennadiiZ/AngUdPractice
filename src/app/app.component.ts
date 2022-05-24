@@ -13,7 +13,6 @@ export class AppComponent {
   includeNumbers = false;
   includeSymbols = false;
   length = 0;
-  warning: string = "";
  
 onInput(value: any): void {
     const parsedValue = parseInt(value.value);
@@ -36,7 +35,6 @@ onInput(value: any): void {
   }
 
   onButtonClick(){  
-    this.warning = "";
     const letters = "abcdefghklmnopqrstuvwxyz";
     const numbers = "1234567890";
     const symbols = "!@#$%&?";
