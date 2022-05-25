@@ -2,12 +2,6 @@
 <div class="container">
   <div class="columns is-centered">
   <div class="box column is-one-third">
-
-
-   
-
-
-
         <h1 class="title has-text-centered">Password generator</h1> 
         <div class="field">
           <input class="input" (input)="onInput($event?.target)">
@@ -34,20 +28,18 @@
               <label>Use Symbols</label>
           </div>
         </div>
-  
-    
+
           <button 
           class="button is-link is-fullwidth"
           [disabled]="!(length && (this.includeSymbols || this.includeNumbers || this.includeLetters))" 
           (click)="onButtonClick()"
+          style="margin-bottom: 10px;"
           >Generate!</button> 
     
-  
-        <div class="box">
+        <div *ngIf="password" class="box" style="background-color: rgba(149, 151, 153, .7)">
           <label>Your password</label>
           <input class="input" [value]="password"> 
         </div>  
-
     </div>
   </div>
 </div>

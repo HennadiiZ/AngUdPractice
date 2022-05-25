@@ -52,4 +52,5 @@ onInput(value: any): void {
       }
     this.password = generatedPassword;
   }
+  
 }
